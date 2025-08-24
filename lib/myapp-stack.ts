@@ -13,7 +13,7 @@ export class MyappStack extends Stack {
       partitionKey: { name: "id", type: dynamodb.AttributeType.STRING },
     });
 
-    // creates a new Lambda function that uses Typescript (see myapp-stack.func.ts)
+    // creates a new Lambda function that uses TypeScript (see myapp-stack.func.ts)
     const func = new lambdaNode.NodejsFunction(this, "func", {
       environment: { DYNAMO_TABLE_NAME: table.tableName },
     });
